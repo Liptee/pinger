@@ -2,7 +2,7 @@ from concurrent.futures import ThreadPoolExecutor
 import os
 
 def check_ip(ip):
-    command = f"ping {ip}"
+    command = f"ping {ip} -c 4"
     response = os.popen(command).read().encode('cp1251').decode('cp866')
     del command
     if "(100%" in response:
